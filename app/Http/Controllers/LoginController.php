@@ -7,7 +7,12 @@ use Illuminate\Validation\Rule;
 use App\Models\User;
 
 class LoginController extends Controller
-{
+{   
+    public function logout(){
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function showLogin()
     {
         return view('auth.login');

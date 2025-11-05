@@ -5,7 +5,9 @@
 @section('content')
 
 <div>
-    <h1>Entre aqui</h1>
+    <!--Login-->
+    <div>
+        <h1>Entre aqui</h1>
     <form action="post">
         @csrf
         <fieldset>
@@ -24,8 +26,15 @@
                 >
             </div>
         </fieldset>
-        
+    </div>
     </form>
+    <!--Logout-->
+    <div>
+        <form action="/logout" method="post">
+            @csrf
+            <button type="submit">Sair</button>
+        </form>
+    </div>
 </div>
 
 @endsection
