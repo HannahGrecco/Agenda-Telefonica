@@ -19,3 +19,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 ##Rota de Logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+##Rota da Agenda
+Route::get('/agenda', function () {
+    return view('auth.agenda');
+})->middleware('auth');

@@ -3,10 +3,11 @@
 @section('title', 'Cadastre-se')
 
 @section('content')
+
     <section>
         <div>
             <h1>Crie sua conta</h1>
-            <form action="post" action="{{ url('register') }}" >
+            <form method="post" action="{{ url ('register') }}" >
                 @csrf
                 <fieldset>
                     <div>
@@ -30,6 +31,8 @@
                             required                
                         >
                     </div>
+
+                    <button type="submit">Criar conta</button>
                 </fieldset>
             </form>
         </div>

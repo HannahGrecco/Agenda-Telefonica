@@ -21,9 +21,13 @@ class RegisterController extends Controller
             'registerEmail' => ['required', 'email', Rule::unique('users', 'email')],
         ]);
 
-        $incomingFields['registerPassword'] = bcrypt($incomingFields['registerPassword']);
+         $userData = [
+        'name' => $incomingFields['registerUsername'],
+        'email' => $incomingFields['registerEmail'],
+        'password' => bcrypt($incomingFields['registerPassword']),
+    ];
 
-        $user = User::create($incomingFields);
+        $user = User::create($userData);
         auth()->login($user);
         return redirect('/agenda');
     }
