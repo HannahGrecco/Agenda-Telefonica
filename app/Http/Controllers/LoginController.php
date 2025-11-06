@@ -23,21 +23,12 @@ class LoginController extends Controller
         $incomingFields = $request->validate([
             'loginUsername' => ['required'],
             'loginPassword' => ['required', 'min:8', 'max:20']
-        ]);
-    }
+        ]); {
+            $request->session()->regenerate();
+            return redirect('/');
+        }
+        return back()->withErrors(['loginUsername' => 'Nome ou senha incorretos'])
+    ;}
 
-   ## public function register(Request $request)
-    ##{
-    ##    $incomingFields = $request->validate([
-  ##          'registerUsername' => ['required', 'min:3'],
- ##           'registerPassword' => ['required', 'min:8', 'max:20'],
- ##           'registerEmail' => ['required', 'email', Rule::unique('users', 'email')]
-##        ]);
-
- ##       $incomingFields['registerPassword'] = bcrypt($incomingFields['registerPassword']);
-
-  ##   $user = User::create($incomingFields);
-    ##    auth()->login($user);
-      ##  return redirect('/');
-    ##}
+  
 }

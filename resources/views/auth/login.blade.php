@@ -13,14 +13,14 @@
         <fieldset>
             <div>
                 <input type="text"
-                    name="username"
+                    name="loginUsername"
                     placeholder="Nome de usuário"
                     required                
                 >       
             </div>
             <div>
                 <input type="password"
-                    name="password"
+                    name="loginPassword"
                     placeholder="Senha"
                     required                
                 >

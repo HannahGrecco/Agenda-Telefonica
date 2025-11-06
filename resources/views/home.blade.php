@@ -14,9 +14,9 @@
 
     <div>
         <p>Se você não tem uma conta, registre-se:</p>
-        <!--<a href="">
+        <a href="{{ url('/register') }}">
             <button type="button">Criar conta</button>
-        </a>-->
+        </a>
     </div>
 </section>
 @endsection
