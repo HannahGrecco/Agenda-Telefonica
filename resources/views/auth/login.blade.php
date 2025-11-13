@@ -8,7 +8,7 @@
     <!--Login-->
     <div>
         <h1>Entre aqui</h1>
-    <form action="post">
+    <form method="post" action="{{ route('login.post') }}">
         @csrf
         <fieldset>
             <div>
@@ -25,9 +25,18 @@
                     required                
                 >
             </div>
+            <button type="submit">Entrar</button>
+            @if ($errors->any())
+            <div>
+                 @foreach ($errors->all() as $error)
+                    <p style="color: red;">{{ $error }}</p>
+                 @endforeach
+             </div>
+    @endif
         </fieldset>
     </div>
     </form>
+    
     <!--Logout-->
     <div>
         <form action="/logout" method="post">

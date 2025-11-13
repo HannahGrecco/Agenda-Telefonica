@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
-
+import 'animate.css';
 export default defineConfig({
     plugins: [
         laravel({
@@ -10,4 +10,5 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    
 });

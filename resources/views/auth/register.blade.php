@@ -7,7 +7,7 @@
     <section>
         <div>
             <h1>Crie sua conta</h1>
-            <form method="post" action="{{ url ('register') }}" >
+            <form method="POST" action="{{ route('register.post') }}">
                 @csrf
                 <fieldset>
                     <div>
