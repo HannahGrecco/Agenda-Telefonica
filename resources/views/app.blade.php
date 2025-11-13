@@ -18,5 +18,12 @@
     </head>
     <body>
         @yield('content')
+            
+
+      <!-- Footer -->  
+     <footer class="fixed bottom-0 left-0 w-full bg-sky-400 text-white text-center py-3 shadow-inner">
+        <p class="text-sm opacity-80">© 2025 Hannah Grecco — Agenda Telefônica</p>
+    </footer>
+    
     </body>
 </html>
