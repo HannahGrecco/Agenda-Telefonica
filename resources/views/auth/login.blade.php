@@ -4,12 +4,7 @@
 
 @section('content')
 
-    <div class="btn btn-error p-4 m-4 absolute top-0 left-0">
-        <form action="/logout" method="post">
-            @csrf
-            <button title="Voltar para o início" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
-        </form>
-    </div>
+   
 <div class=" flex items-center justify-center min-h-screen">
     
     <!--Login-->

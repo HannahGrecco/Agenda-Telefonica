@@ -23,3 +23,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/agenda', function () {
     return view('auth.agenda');
 })->middleware('auth');
+##Rota para cadastro de contato
+Route::get('/contactRegister', function () {
+    return view('auth.contactReg');
+})->middleware('auth');
