@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('home');
@@ -24,6 +25,4 @@ Route::get('/agenda', function () {
     return view('auth.agenda');
 })->middleware('auth');
 ##Rota para cadastro de contato
-Route::get('/contactRegister', function () {
-    return view('auth.contactReg');
-})->middleware('auth');
+Route::get('/contactRegister', [ContactController::class, 'showContactForm'])->middleware('auth');
