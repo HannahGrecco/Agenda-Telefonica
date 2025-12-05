@@ -9,6 +9,12 @@ use Illumite\Support\Facades\Storage;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        $user = auth()->user();
+         $contacts = Contact::all();
+        return view('auth.agenda', compact('contacts'));
+    }
     public function showContactForm()
     {
         return view('auth.contactReg');

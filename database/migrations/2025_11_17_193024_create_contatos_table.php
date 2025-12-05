@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('contact_phone');
             $table->string('contact_email')->unique();
             $table->string('icon_perfil')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

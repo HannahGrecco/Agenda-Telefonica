@@ -24,8 +24,23 @@
             <hr>
             <p class="text-2xl font-medium text-gray-600">Seus contatos</p>
         </div>
+        <div class="p-8">
+        @foreach ($contacts as $contact)
+        <div>
+
+        </div>
+            <img class="rounded-full w-20 h-20 object-cover align-middle" src="{{ asset('storage/' . $contact->icon_perfil) }}" width="50">
+            <div>
+
+
+                <p><strong>{{ $contact->contact_name }}</strong></p>
+                <p>{{ $contact->contact_phone }}</p>
+                <p>{{ $contact->contact_email }}</p>
+            </div>
+
+        @endforeach
+            </div>
     </div>
-    
 </section>
 
 @endauth
