@@ -26,3 +26,4 @@ Route::get('/agenda', function () {
 })->middleware('auth');
 ##Rota para cadastro de contato
 Route::get('/contactRegister', [ContactController::class, 'showContactForm'])->middleware('auth');
+Route::post('/contactRegister', [ContactController::class, 'addContact'])->middleware('auth')->name('contactAdd.post');
