@@ -13,33 +13,33 @@
         </form>
     </div>
     <div class="p-8 pt-[200px]">
-        <h1 class="text-3xl font-bold mb-4">Bem-vindo à sua Agenda Telefônica</h1>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Bem-vindo à sua Agenda Telefônica</h1>
         <p class="text-lg">Gerencie seus contatos de forma fácil e rápida.</p>
         <div>
-        <button class="mt-8 bg-white text-lg text-sky-400 border-sky-400 border-2 font-semibold py-4 px-10 rounded-full hover:bg-gray-100 transition-all" type="button"><i class="fa fa-user mr-4 "></i><a href="{{ url('/contactRegister') }}">Adicione um contato</a>
+        <button class="mx-auto mt-8 flex items-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-sky-600 transition-all">
+            <i class="fa fa-user"></i>
+            <a href="{{ url('/contactRegister') }}">Adicionar contato</a>
         </button>
+
     </div>
         <div>
             <br>
             <hr>
-            <p class="text-2xl font-medium text-gray-600">Seus contatos</p>
+            <p class="mt-4 text-2xl font-bold text-gray-800 text-left">Seus contatos</p>
         </div>
         <div class="p-8">
         @foreach ($contacts as $contact)
-        <div>
+            <div class="hover:scale-105 hover:shadow-lg transform transition duration-150 flex items-center gap-6 p-4 mb-6 bg-white rounded-lg shadow-md flex-col sm:flex-row  ">
+                <img class="rounded-full w-20 h-20 object-cover" src="{{ asset('storage/' . $contact->icon_perfil) }}" alt="Foto de perfil">
+                <div class="text-left">
+                    <p class="font-bold text-xl text-gray-800">{{ $contact->contact_name }}</p>
+                    <p class="text-gray-600">{{ $contact->contact_phone }}</p>
+                    <p class="text-gray-500">{{ $contact->contact_email }}</p>
+                </div>
+            </div>
+        @endforeach
 
         </div>
-            <img class="rounded-full w-20 h-20 object-cover align-middle" src="{{ asset('storage/' . $contact->icon_perfil) }}" width="50">
-            <div>
-
-
-                <p><strong>{{ $contact->contact_name }}</strong></p>
-                <p>{{ $contact->contact_phone }}</p>
-                <p>{{ $contact->contact_email }}</p>
-            </div>
-
-        @endforeach
-            </div>
     </div>
 </section>
 
