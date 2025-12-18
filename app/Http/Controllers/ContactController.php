@@ -11,23 +11,14 @@ class ContactController extends Controller
 {
     public function destroy($id)
     {
-        $contact = Contact::findOrFail($id);
-        $contact->delete();
+        Contact::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail()
+            ->delete();
 
-        return redirect()->back()->with('success', 'Contato removido com sucesso!');
-    }
-
-    public function deleteContact(Contact $contact)
-    {
-        // Verifica se o contato pertence ao usuário autenticado
-        if ($contact->user_id !== auth()->id()) {
-            return redirect()->route('agenda.index')->with('error', 'Você não tem permissão para excluir este contato.');
-        }
-
-        // Exclui o contato
-        $contact->delete();
-
-        return redirect()->route('agenda.index')->with('success', 'Contato excluído com sucesso.');
+        return redirect()
+            ->route('agenda.index')
+            ->with('success', 'Contato removido com sucesso!');
     }
 
     public function index()
