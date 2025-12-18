@@ -28,3 +28,5 @@ Route::get('/agenda', function () {
 Route::get('/contactRegister', [ContactController::class, 'showContactForm'])->middleware('auth');
 Route::post('/contactRegister', [ContactController::class, 'addContact'])->middleware('auth')->name('contactAdd.post');
 Route::get('/agenda', [ContactController::class, 'index'])->middleware('auth')->name('agenda.index');
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])
+    ->name('contacts.destroy');

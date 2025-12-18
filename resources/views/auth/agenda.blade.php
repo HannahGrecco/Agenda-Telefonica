@@ -35,6 +35,16 @@
                     <p class="font-bold text-xl text-gray-800">{{ $contact->contact_name }}</p>
                     <p class="text-gray-600">{{ $contact->contact_phone }}</p>
                     <p class="text-gray-500">{{ $contact->contact_email }}</p>
+                    <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" class="mt-4">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit"
+                        class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition-all">
+                         Excluir
+                        </button>
+                    </form>
+
                 </div>
             </div>
         @endforeach
