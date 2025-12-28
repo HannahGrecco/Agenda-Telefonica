@@ -5,15 +5,14 @@ O projeto está sendo desenvolvido com foco em aprendizado e boas práticas no u
 
 ---
 
-## 🚧 Status do Projeto
-> 🛠️ Em desenvolvimento  
-Atualmente, está sendo construída a **página principal**, que conterá as seguintes funcionalidades:
-- ✅ **Cadastrar contato**
-- ✅ **Visualizar contato individualmente**
-- ✅ **Editar contato**
-- ✅ **Excluir contato**
+## Funcionalidades
 
-A parte de **autenticação (@auth)** já foi implementada, permitindo **login** e **cadastro de usuários**.
+-  **Auth (Login e Cadastro de usuário)**
+-  **Cadastrar contato**
+-  **Visualizar contato individualmente**
+-  **Editar contato**
+-  **Excluir contato**
+
 
 ---
 
