@@ -16,7 +16,8 @@
                 @csrf
                 <fieldset>
                     <div>
-                        <input type="file" name="icon_perfil">
+                        <label title="Foto de perfil" for="icon_perfil"><i class="fa-solid fa-user text-[40px] p-4 hover:cursor-pointer"></i> </label>
+                        <input id="icon_perfil" type="file" name="icon_perfil" class="hidden">
                     </div>
                     <div class="relative mb-8">
                         <input class="w-full rounded-full bg-gray-100 px-4 py-2 pl-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-400" type="text"

@@ -9,6 +9,30 @@ use Illumite\Support\Facades\Storage;
 
 class ContactController extends Controller
 {
+    public function update(Request $request, Contact $contato)
+{
+    $request->validate([
+        'contact_name' => 'required|string|max:255',
+        'contact_phone' => 'required|string|max:20',
+        'contact_email' => 'required|email',
+    ]);
+
+    $contato->update([
+        'contact_name' => $request->contact_name,
+        'contact_phone' => $request->contact_phone,
+        'contact_email' => $request->contact_email,
+    ]);
+
+    return redirect()
+        ->route('contatos.edit', $contato->id)
+        ->with('success', 'Contato atualizado com sucesso!');
+}
+
+    public function edit(Contact $contato)
+    {
+        return view('auth.contactEdit', compact('contato'));
+    }
+
     public function destroy($id)
     {
         Contact::where('id', $id)

@@ -9,6 +9,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contactEdit/{contato}', [ContactController::class, 'edit'])->middleware('auth')->name('contatos.edit');
+
+Route::put('/contactEdit/{contato}', [ContactController::class, 'update'])->middleware('auth')->name('contatos.update');
+
 ##Rota post e get de Login
 Route::get ('/login', [LoginController::class, 'showLogin'])->name('login');
 
