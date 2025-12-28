@@ -33,7 +33,7 @@ O projeto está sendo desenvolvido com foco em aprendizado e boas práticas no u
 
 Este projeto utiliza XAMPP como ambiente local (Apache + MySQL).
 
-### Requisitos
+## Requisitos
 
 XAMPP (Apache e MySQL ativos)
 PHP ≥ 8.1
@@ -41,37 +41,37 @@ Composer
 Node.js / npm
 Git
 
-# 1. Clone o repositório
+### 1. Clone o repositório
 git clone https://github.com/HannahGrecco/Agenda-Telefonica.git
 
-# 2. Acesse a pasta do projeto
+### 2. Acesse a pasta do projeto
 
 cd Agenda-Telefonica
 
-# 3. Instale as dependências do backend
+### 3. Instale as dependências do backend
 composer install
 
-# 4. Instale as dependências do frontend
+### 4. Instale as dependências do frontend
 npm install
 
-# 5. Crie o arquivo de ambiente
+### 5. Crie o arquivo de ambiente
 cp .env.example .env
 
-# 6. Inicie o Apache e MySQL pelo XAMPP
-# 7. Acesse o phpMyAdmin
-# 8. Crie um banco de dados e no arquivo .env configure em DB_DATABASE o nome do banco de dados, DB_USERNAME=root e DB_PASSWORD=default
+### 6. Inicie o Apache e MySQL pelo XAMPP
+### 7. Acesse o phpMyAdmin
+### 8. Crie um banco de dados e no arquivo .env configure em DB_DATABASE o nome do banco de dados, DB_USERNAME=root e DB_PASSWORD=default
 
-# 9. Gere a chave da aplicação
+### 9. Gere a chave da aplicação
 php artisan key:generate
 
-# 10. Execute as migrations
+### 10. Execute as migrations
 php artisan migrate
 
-# 11. Execute o projeto
+### 11. Execute o projeto
 Em um terminal execute: npm run dev
 E em outro execute: php artisan serve
 
 ou execute composer run dev
 
-# 12. Acesse no navegador:
+### 12. Acesse no navegador:
 http://127.0.0.1:8000
