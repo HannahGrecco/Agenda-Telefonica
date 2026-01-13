@@ -78,6 +78,7 @@ class ContactController extends Controller
             'contact_phone' => $incomingFields['contact_phone'],
             'contact_email' => $incomingFields['contact_email'],
             'icon_perfil' => $incomingFields['icon_perfil'] ?? null,
+            'user_id'       => auth()->id(),
         ]);
 
         // Lógica para salvar o contato no banco de dados

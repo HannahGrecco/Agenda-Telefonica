@@ -24,7 +24,8 @@ class Contact extends Model
         'contact_name',
         'contact_phone',
         'contact_email',
-        'icon_perfil'
+        'icon_perfil',
+        'user_id',
     ];
     public function user()
     {

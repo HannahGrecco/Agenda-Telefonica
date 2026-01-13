@@ -5,7 +5,7 @@
 @section('content')
 
 @auth
-<section class=" flex text-center justify-center min-h-screen">
+<section class="flex text-center justify-center min-h-screen">
      <div class="btn btn-error p-4 m-4 absolute top-0 left-0">
         <form action="/logout" method="post">
             @csrf
