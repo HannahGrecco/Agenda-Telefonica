@@ -4,18 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use Illumite\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 
 
 class ContactController extends Controller
 {
-    public function update(Request $request, Contact $contato)
+    public function update(Request $request, $id)
 {
     $request->validate([
         'contact_name' => 'required|string|max:255',
         'contact_phone' => 'required|string|max:20',
         'contact_email' => 'required|email',
     ]);
+
+    $contato = Contact::where('id', $id)
+        ->where('user_id', auth()->id())
+        ->firstOrFail();
 
     $contato->update([
         'contact_name' => $request->contact_name,
@@ -28,10 +32,6 @@ class ContactController extends Controller
         ->with('success', 'Contato atualizado com sucesso!');
 }
 
-    public function edit(Contact $contato)
-    {
-        return view('auth.contactEdit', compact('contato'));
-    }
 
     public function destroy($id)
     {
@@ -45,10 +45,10 @@ class ContactController extends Controller
             ->with('success', 'Contato removido com sucesso!');
     }
 
+
     public function index()
     {
-        $user = auth()->user();
-         $contacts = Contact::all();
+        $contacts = Contact::where('user_id', auth()->id())->get();
         return view('auth.agenda', compact('contacts'));
     }
     public function showContactForm()

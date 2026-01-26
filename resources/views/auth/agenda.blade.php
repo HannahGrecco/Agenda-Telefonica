@@ -32,20 +32,26 @@
             <div class="hover:scale-105 hover:shadow-lg transform transition duration-150 flex items-center gap-6 p-4 mb-6 bg-white rounded-lg shadow-md flex-col sm:flex-row  ">
                 <img class="rounded-full w-20 h-20 object-cover" src="{{ asset('storage/' . $contact->icon_perfil) }}" alt="Foto de perfil">
                 <div class="text-left">
-                    <a href="{{ route('contatos.edit', $contact->id) }}">
-                    <p class="font-bold text-xl text-gray-800">{{ $contact->contact_name }}</p>
+                    <p class="font-bold text-xl text-gray-800">
+                        <a href="{{ route('contatos.edit', $contact->id) }}">
+                            {{ $contact->contact_name }}
+                        </a>
+                    </p>
+
                     <p class="text-gray-600">{{ $contact->contact_phone }}</p>
                     <p class="text-gray-500">{{ $contact->contact_email }}</p>
+
                     <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" class="mt-4">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit"
-                        class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition-all">
-                         Excluir
+                        <button
+                            type="submit"
+                            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition-all">
+                            Excluir
                         </button>
                     </form>
-                    </a>
+
                 </div>
             </div>
         @endforeach
